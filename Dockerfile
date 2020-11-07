@@ -1,6 +1,6 @@
 FROM fluentd:latest
 MAINTAINER l4m
-RUN apk update -y && \
+RUN apt update -y && \
     apk install -y ruby-dev g++ make && \
     gem install fluentd fluent-plugin-secure-forward fluent-plugin-elasticsearch && \
     gem install fluent-plugin-elasticsearch && \ 
