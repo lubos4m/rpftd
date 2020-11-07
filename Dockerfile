@@ -1,4 +1,5 @@
 FROM fluentd:latest
+MAINTAINER l4m
 RUN gem install fluent-plugin-elasticsearch
 RUN gem install fluent-plugin-mqtt-io
 EXPOSE 24284
