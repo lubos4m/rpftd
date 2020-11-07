@@ -1,10 +1,10 @@
 FROM fluentd:latest
 MAINTAINER l4m
-RUN apt update -y && \
-    apk install -y ruby-dev g++ make && \
+RUN apk update && \
+    apk install ruby-dev g++ make && \
     gem install fluentd fluent-plugin-secure-forward fluent-plugin-elasticsearch && \
     gem install fluent-plugin-elasticsearch && \ 
-    apk remove --purge -y  $(apt-mark showauto) && \ 
+    apk remove --purge  $(apt-mark showauto) && \ 
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # RUN gem install fluent-plugin-mqtt-io
 # RUN gem install fluent-plugin-elasticsearch
