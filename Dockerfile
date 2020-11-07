@@ -2,7 +2,7 @@ FROM fluentd:latest
 MAINTAINER l4m
 RUN gem install fluent-plugin-mqtt-io
 RUN gem install fluent-plugin-elasticsearch
-USER ubuntu
+USER root
 WORKDIR /home/ubuntu
 ENV PATH /home/ubuntu/ruby/bin:$PATH
 EXPOSE 24284
