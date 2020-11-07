@@ -1,7 +1,7 @@
 FROM fluentd:latest
 MAINTAINER l4m
-RUN apk update && \
-    apk install ruby-dev g++ make && \
+RUN sudo apk update && \
+    sudo apk install ruby-dev g++ make && \
     gem install fluentd fluent-plugin-secure-forward fluent-plugin-elasticsearch && \
     gem install fluent-plugin-elasticsearch && \ 
     apk remove --purge  $(apt-mark showauto) && \ 
