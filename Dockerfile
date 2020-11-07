@@ -1,7 +1,8 @@
 FROM fluentd:latest
 MAINTAINER l4m
 USER root
-RUN sudo apk update && \
+RUN apk update && \
+    apk upgrade && \
     gem install fluentd fluent-plugin-secure-forward fluent-plugin-elasticsearch && \
     gem install fluent-plugin-elasticsearch
 # RUN gem install fluent-plugin-mqtt-io
